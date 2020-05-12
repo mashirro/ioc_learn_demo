@@ -13,7 +13,7 @@ public class HelloServiceTest {
      * 使用自定义注解结合自定义BeanPostProcessor实现类---->模拟实现@Autowired注解的功能
      * 关于BeanPostProcessor讲解请参看博客Spring5.2.5 ioc容器官方文档学习
      */
-    @RountingInjected
+    @RountingInjected(beanName = "HelloService2")
     private HelloService helloService;
 
     public void sayHello(){

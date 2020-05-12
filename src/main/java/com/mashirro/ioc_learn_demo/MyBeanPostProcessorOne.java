@@ -93,8 +93,11 @@ public class MyBeanPostProcessorOne implements BeanPostProcessor, Ordered {
             }
             for (String key : beansOfType.keySet()) {
                 if (beanName.equals(key)) {
+                    Object o = null;
+                    //从容器中获取依赖项
+                    o = beansOfType.get(key);
                     //依赖项注入
-                    field.set(bean, beansOfType.get(key));
+                    field.set(bean, o);
                 }
             }
         } else {
