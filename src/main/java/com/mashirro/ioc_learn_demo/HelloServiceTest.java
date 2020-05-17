@@ -14,6 +14,8 @@ public class HelloServiceTest {
      * 关于BeanPostProcessor讲解请参看博客Spring5.2.5 ioc容器官方文档学习
      */
     @RountingInjected(beanName = "HelloService2")
+//    @Autowired
+//    @Qualifier("HelloService2")
     private HelloService helloService;
 
     public void sayHello(){
