@@ -13,14 +13,16 @@ public class MyBeanPostProcessorTwo implements BeanPostProcessor, Ordered {
     @Nullable
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        //System.out.println("MyBeanPostProcessorTwo---After: " + beanName);
+        //后处理器在调用容器初始化方法（如initializengbean afterPropertiesSet()或任何声明的init方法）之后
+        System.out.println("MyBeanPostProcessorTwo---After: " + beanName);
         return bean;
     }
 
     @Nullable
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        //System.out.println("MyBeanPostProcessorTwo---Before: " +beanName);
+        //后处理器在调用容器初始化方法（如initializengbean afterPropertiesSet()或任何声明的init方法）之前
+        System.out.println("MyBeanPostProcessorTwo---Before: " +beanName);
         return bean;
     }
 
