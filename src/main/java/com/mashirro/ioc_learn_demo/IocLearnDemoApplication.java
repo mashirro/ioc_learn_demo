@@ -10,6 +10,10 @@ public class IocLearnDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(IocLearnDemoApplication.class, args);
+		//测试代码
+		HelloServiceTest helloServiceTest = ApplicationContextUtil.getBean(HelloServiceTest.class);
+		helloServiceTest.sayHello();
+		System.out.println(helloServiceTest.getTeacherName());
 	}
 
 }

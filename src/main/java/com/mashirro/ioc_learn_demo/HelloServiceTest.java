@@ -4,7 +4,6 @@ package com.mashirro.ioc_learn_demo;
 import com.mashirro.ioc_learn_demo.annotation.RountingInjected;
 import com.mashirro.ioc_learn_demo.service.HelloService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -26,19 +25,27 @@ public class HelloServiceTest {
     @Value("${teacher.name}")
     private String teacherName;
 
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
     public void sayHello(){
         System.out.println(helloService.sayHello());
     }
 
     /**
-     * 测试用main入口
+     * 测试用main入口(此测试入口移到spring boot启动类)
      * @param args
      */
-    public static void main(String[] args) {
-        //使用AnnotationConfigApplicationContext实例化Spring容器
-        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext("com.mashirro.ioc_learn_demo");
-        HelloServiceTest helloServiceTest = ac.getBean(HelloServiceTest.class);
-        helloServiceTest.sayHello();
-        System.out.println(helloServiceTest.teacherName);
-    }
+//    public static void main(String[] args) {
+//        //使用AnnotationConfigApplicationContext实例化Spring容器
+//        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext("com.mashirro.ioc_learn_demo");
+//        HelloServiceTest helloServiceTest = ac.getBean(HelloServiceTest.class);
+//        helloServiceTest.sayHello();
+//        System.out.println(helloServiceTest.teacherName);
+//    }
 }
