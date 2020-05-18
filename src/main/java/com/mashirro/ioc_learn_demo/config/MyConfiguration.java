@@ -26,6 +26,7 @@ public class MyConfiguration {
      */
     @Bean
     public StudentManage studentManage(){
+        //return new StudentManage(new Student());
         return new StudentManage();
     }
 }

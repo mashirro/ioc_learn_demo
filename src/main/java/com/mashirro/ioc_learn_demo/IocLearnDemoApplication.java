@@ -19,7 +19,7 @@ public class IocLearnDemoApplication {
 
 		/**
 		 * student为单例bean,StudentManage为多例bean
-		 * 如果使用@Autowired为StudentManage bean注入student bean,会发现两个sm对象是同一个对象
+		 * 如果在Configuration类中通过new StudentManage(new Student())处理依赖关系,会发现sm1和sm2中的student是同一个对象
 		 */
 		Student student = ApplicationContextUtil.getBean(Student.class);
 		StudentManage sm1 = ApplicationContextUtil.getBean(StudentManage.class);
